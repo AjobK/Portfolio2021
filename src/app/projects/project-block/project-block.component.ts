@@ -6,10 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./project-block.component.scss']
 })
 export class ProjectBlockComponent implements OnInit {
-  @Input() title: String | undefined;
-  @Input() type: String | undefined;
-  @Input() description: String | undefined;
-  @Input() imageSource: String | undefined;
+  @Input() title: String = 'No title';
+  @Input() type: String = 'Personal project';
+  @Input() description: String = 'No description';
+  @Input() imageSource: String = '';
 
   constructor() { }
 
