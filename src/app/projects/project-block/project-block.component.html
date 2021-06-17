@@ -1,1 +1,14 @@
-<p>project-block works!</p>
+<article>
+    <div class="visualInfo" [ngStyle]="{ 'background-image': 'url(' + (imageSource || '') + ')' }">
+        <div class="visualInfoOverlay"></div>
+    </div>
+    <h3>
+        {{ title || 'No title' }}
+    </h3>
+    <h4>
+        {{ type || 'Personal project' }}
+    </h4>
+    <p>
+        {{ description || 'No description' }}
+    </p>
+</article>
