@@ -1,21 +1,16 @@
 <header>
     <div class="innerWrapper">
         <nav>
-            <a
+            <a *ngFor="let pageName of ['Projects', 'CV-2021', 'Contact']"
                 [routerLink]="'hello'"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}"
-            > Projects </a>
-            <a
-                [routerLink]="'hello'"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}"
-            > Contact </a>
-            <a
-                [routerLink]="'hello'"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}"
-            > CV </a>
+            >
+                {{ pageName }}
+                <span>
+                    <!-- Underline on hover -->
+                </span>
+            </a>
         </nav>
         <div class="info">
             <h2>Software Engineer</h2>

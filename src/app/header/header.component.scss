@@ -20,6 +20,7 @@ header {
             text-decoration: none;
             color: white;
             opacity: 0.8;
+            position: relative;
 
             @include mobile-all {
                 font-size: 12pt;
@@ -34,7 +35,21 @@ header {
             }
 
             &:hover {
-                color: $secondary-color;
+                opacity: 1;
+
+                > span {
+                    width: 100%;
+                }
+            }
+
+            > span {
+                transition: 0.2s;
+                width: 0%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: $secondary-color;
             }
         }
     }
@@ -138,7 +153,7 @@ header {
         &:last-child {
             min-height: 70px;
             object-position: right bottom;
-            transform: scaleX(-1) scale(2);
+            transform: scaleX(-1);
             opacity: 0.35;
         }
     }

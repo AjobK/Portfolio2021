@@ -1,0 +1,20 @@
+@import '../../utilities/scss/master.scss';
+
+section {
+    margin: 80px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: $wrapper-width;
+
+    > h2 {
+        @include secionTitle();
+    }
+
+    > .projectsOverview {
+        width: 100%;
+    }
+}

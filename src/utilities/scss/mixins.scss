@@ -1,0 +1,11 @@
+@mixin secionTitle {
+    font-size: 24pt;
+    margin-bottom: 30px;
+
+    &::before, &::after {
+        content: '•';
+        margin: 5px;
+        color: $secondary-color;
+        opacity: 0.5;
+    }
+}
