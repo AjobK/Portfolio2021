@@ -1,0 +1,20 @@
+@import '../../utilities/scss/master.scss';
+
+:host > section {
+    @include section;
+
+    > h2 {
+        @include sectionTitle();
+    }
+
+    > a {
+        transition: 0.2s;
+        text-decoration: none;
+
+        @include baseButton($large: true, $standard: true);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

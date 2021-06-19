@@ -10,6 +10,7 @@ import { ProjectBlockComponent } from './projects/project-block/project-block.co
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MycvComponent } from './mycv/mycv.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     ProjectsComponent,
     ProjectBlockComponent,
-    ContactComponent
+    ContactComponent,
+    MycvComponent
   ],
   imports: [
     BrowserModule,

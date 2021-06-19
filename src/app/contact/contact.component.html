@@ -26,6 +26,8 @@
                 class="btn small"
                 type="submit"
                 [disabled]="
+                    contactForm.form.value.message &&
+                    contactForm.value.email &&
                     contactForm.form.value.message.length <= 0 &&
                     contactForm.form.value.email.length <= 0
                 "

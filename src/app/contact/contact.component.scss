@@ -20,6 +20,7 @@
         }
 
         > div {
+            margin-top: 10px;
             display: flex;
             justify-content: flex-end;
 
@@ -28,15 +29,7 @@
             }
 
             > button {
-                transition: 0.2s;
-                text-transform: uppercase;
-                border: none;
-                background-color: transparent;
-                font-family: 'Poppins';
-                font-weight: bolder;
-                font-size: 12pt;
-                cursor: pointer;
-                letter-spacing: 0.5px;
+                @include baseButton();
 
                 &:first-child {
                     margin-right: 20px;
@@ -48,14 +41,7 @@
                 }
 
                 &:last-child {
-                    border-radius: 100vh;
-                    color: white;
-                    background-color: $primary-color-darker;
-                    padding: 6px 23px;
-
-                    &:disabled {
-                        background-color: rgba(0, 0, 0, 0.5);
-                    }
+                    @include baseButton($standard: true);
                 }
             }
         }
@@ -67,6 +53,7 @@
             margin-bottom: 15px;
             font-family: 'Poppins';
             font-size: 12pt;
+            border-radius: 8px;
         }
 
         > :is(input, textarea, div) {

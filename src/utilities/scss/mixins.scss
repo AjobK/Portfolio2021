@@ -20,3 +20,31 @@
     width: 100%;
     max-width: $wrapper-width;
 }
+
+@mixin baseButton($large: false, $standard: false) {
+    transition: 0.2s;
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 12pt;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+
+    @if $large {
+        font-size: 14pt;
+        padding: 10px 30px !important;
+    }
+
+    @if $standard {
+        border-radius: 100vh;
+        color: white;
+        background-color: $primary-color-darker;
+        padding: 6px 23px;
+
+        &:disabled {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
