@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './pages/main/main.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectBlockComponent } from './projects/project-block/project-block.component';
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { ProjectBlockComponent } from './projects/project-block/project-block.co
     HeaderComponent,
     MainComponent,
     ProjectsComponent,
-    ProjectBlockComponent
+    ProjectBlockComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

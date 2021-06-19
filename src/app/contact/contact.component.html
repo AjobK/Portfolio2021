@@ -1,0 +1,45 @@
+<section>
+    <h2>
+        Let's get in touch!
+    </h2>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" [ngClass]="{ error: false }">
+        <input
+            placeholder="E-mail address"
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+        />
+        <textarea
+            placeholder="Your message..."
+            id="message"
+            class="form-control"
+            ngModel
+            name="message"
+            required
+        >
+        </textarea>
+        <div>
+            <button
+                class="btn small"
+                type="submit"
+                [disabled]="
+                    contactForm.form.value.message.length <= 0 &&
+                    contactForm.form.value.email.length <= 0
+                "
+            >
+                RESET
+            </button>
+            <button
+                class="btn small"
+                type="submit"
+                [disabled]="!contactForm.valid"
+            >
+                SEND
+            </button>
+        </div>
+
+    </form>
+</section>

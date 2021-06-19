@@ -1,0 +1,76 @@
+@import '../../utilities/scss/master.scss';
+
+:host > section {
+    @include section;
+
+    > h2 {
+        @include sectionTitle();
+    }
+
+    > form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: $wrapper-width * 0.65;
+
+        > textarea {
+            resize: vertical;
+            min-height: 200px;
+            max-height: 500px;
+        }
+
+        > div {
+            display: flex;
+            justify-content: flex-end;
+
+            @include mobile-all {
+                justify-content: center;
+            }
+
+            > button {
+                transition: 0.2s;
+                text-transform: uppercase;
+                border: none;
+                background-color: transparent;
+                font-family: 'Poppins';
+                font-weight: bolder;
+                font-size: 12pt;
+                cursor: pointer;
+                letter-spacing: 0.5px;
+
+                &:first-child {
+                    margin-right: 20px;
+                    color: rgba(0, 0, 0, 0.5);
+
+                    &:disabled {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+
+                &:last-child {
+                    border-radius: 100vh;
+                    color: white;
+                    background-color: $primary-color-darker;
+                    padding: 6px 23px;
+
+                    &:disabled {
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+        }
+
+        > :is(input, textarea) {
+            padding: 15px;
+            border: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            font-family: 'Poppins';
+            font-size: 12pt;
+        }
+
+        > :is(input, textarea, div) {
+            width: 100%;
+        }
+    }
+}

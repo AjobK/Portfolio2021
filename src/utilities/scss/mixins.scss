@@ -1,4 +1,4 @@
-@mixin secionTitle {
+@mixin sectionTitle {
     font-size: 24pt;
     margin-bottom: 30px;
 
@@ -8,4 +8,15 @@
         color: $secondary-color;
         opacity: 0.5;
     }
+}
+
+@mixin section {
+    margin: 80px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: $wrapper-width;
 }
