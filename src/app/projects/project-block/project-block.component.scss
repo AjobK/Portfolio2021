@@ -25,7 +25,7 @@ article {
             left: 0;
             bottom: 0;
             position: absolute;
-            background: linear-gradient(transparent, lighten(rgba($primary-color, 0.5), 20%));
+            background: lighten(rgba($primary-color, 0.75), 20%);
             cursor: pointer;
             display: flex;
             justify-content: center;
@@ -33,12 +33,13 @@ article {
             font-size: 1.2em;
             letter-spacing: 1px;
             color: white;
-            text-shadow: 0 0 20px $secondary-color;
+            text-shadow: 0 0 10px darken($primary-color, 20%);
         }
 
         &:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba($primary-color, 0.25);
+
             > .visualInfoOverlay {
                 opacity: 1;
             }
@@ -58,6 +59,7 @@ article {
     }
 
     > p {
+        display: none;
         font-size: 12pt;
     }
 }
