@@ -14,21 +14,33 @@ article {
         position: relative;
         border-radius: 5px;
         margin-bottom: 15px;
+        border: 1px solid white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
         > .visualInfoOverlay {
             transition: 0.2s;
+            opacity: 0;
             top: 0;
             right: 0;
             left: 0;
             bottom: 0;
             position: absolute;
-            background: linear-gradient(transparent, lighten(rgba($primary-color, 0.8), 20%));
+            background: linear-gradient(transparent, lighten(rgba($primary-color, 0.5), 20%));
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            color: white;
+            text-shadow: 0 0 20px $secondary-color;
         }
 
         &:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba($primary-color, 0.25);
             > .visualInfoOverlay {
-                opacity: 0;
+                opacity: 1;
             }
         }
     }

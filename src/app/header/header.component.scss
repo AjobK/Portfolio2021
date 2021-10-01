@@ -13,6 +13,7 @@ header {
         padding-bottom: 30px;
 
         > a {
+            cursor: pointer;
             transition: 0.2s;
             text-transform: uppercase;
             font-size: 14pt;
@@ -156,5 +157,33 @@ header {
             transform: scaleX(-1);
             opacity: 0.35;
         }
+    }
+}
+
+.scrollToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: 0.2s;
+    padding: 0 8px;
+    border-radius: 100vh;
+    border: 2px solid black;
+    background-color: white;
+    box-shadow: 0 0 0 2px white;
+    font-weight: bold;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 100;
+    
+    &:hover {
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    &.hide {
+        pointer-events: none;
+        opacity: 0;
     }
 }

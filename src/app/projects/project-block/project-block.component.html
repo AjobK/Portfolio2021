@@ -1,6 +1,8 @@
 <article>
     <div class="visualInfo" [ngStyle]="{ 'background-image': 'url(' + (imageSource || '') + ')' }">
-        <div class="visualInfoOverlay"></div>
+        <div class="visualInfoOverlay" (click)="goToProject(title || '')">
+            SHOW MORE
+        </div>
     </div>
     <h3>
         {{ title || 'No title' }}

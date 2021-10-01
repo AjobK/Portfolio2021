@@ -16,4 +16,8 @@ export class ProjectBlockComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToProject(projectName: String = '') {
+    alert('Page has not been created yet. I likely forgot to make it.\n\nSorry for the inconvenience.\n\n- Forgetful Ajob Kustra')
+  }
+
 }
