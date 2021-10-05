@@ -1,0 +1,15 @@
+<section id="projects">
+    <h2>
+        Projects
+    </h2>
+    <section class="projectsOverview">
+        <app-project-block
+            *ngFor="let project of projects"
+            [imageSource]="project.imageUrl"
+            [title]="project.title"
+            [type]="project.projectType.name"
+            [description]="project.description"
+        >
+        </app-project-block>
+    </section>
+</section>
