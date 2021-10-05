@@ -56,11 +56,13 @@ class serverConstructor {
         cert: fs.readFileSync('/etc/letsencrypt/live/kustra.nl/fullchain.pem')
       }, this.app)
 
-      httpsServer.listen(8080, () => {
-        console.log('(Secure) HTTPS Server running on port 8080 :-)');
+      httpsServer.listen(this.port, () => {
+        console.log(`(Secure) HTTPS Server running on port ${this.port} :-)`)
       })
     } else {
-      this.server = this.app.listen(8080, () => { console.log('(Insecure) HTTP Server running on port 8080 :-)')})
+      this.server = this.app.listen(
+        this.port, () => { console.log(`(Insecure) HTTP Server running on port ${this.port} :-)`)}
+      )
     }
 
     if (NODE_ENV === 'development') {
