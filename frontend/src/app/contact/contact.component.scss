@@ -1,17 +1,23 @@
 @import '../../utilities/scss/master.scss';
 
-:host > section {
+#contact {
     @include section;
 
     > h2 {
         @include sectionTitle();
     }
 
-    > form {
+    > .innerWrapper {
+        position: relative;
+        width: 100%;
+        align-self: center;
+        max-width: $wrapper-width * 0.65;
+    }
+
+    form {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: $wrapper-width * 0.65;
 
         > textarea {
             resize: vertical;
@@ -43,6 +49,11 @@
                 &:last-child {
                     @include baseButton($standard: true);
                 }
+                
+
+                > .contactIconSending {
+                    margin-left: 5px;
+                }
             }
         }
 
@@ -59,5 +70,78 @@
         > :is(input, textarea, div) {
             width: 100%;
         }
+    }
+}
+
+.formSent {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 20px rgba($primary-color, 0.2);
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+
+    > p {
+        text-align: center;
+        margin: 10px 0 40px 0;
+    }
+
+    > button {
+        @include baseButton($standard: false);
+        color: rgba(0, 0, 0, 0.5);
+
+        &:disabled {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        &:not(:disabled):hover {
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+    
+    .iconsWrapper {
+        position: relative;
+
+        > .contactIcon {
+            font-size: 64pt;
+            text-shadow: 0 0 20px red;
+            color: $primary-color-darker;
+
+            &Extra {
+                position: absolute;
+                top: 0;
+                right: -25px;
+                font-size: 24pt;
+                color: $secondary-color;
+                
+                animation-name: float;
+                animation-duration: 0.5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+        }
+    }
+}
+
+.hide {
+    transition: 0.2s;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
     }
 }

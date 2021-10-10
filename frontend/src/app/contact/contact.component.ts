@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Output } from '@angular/core'
 import { NgForm } from '@angular/forms'
 import { environment } from '../../environments/environment'
+import { faUserCircle, faCommentAlt, faEnvelope, faExclamationCircle, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-contact',
@@ -8,13 +9,19 @@ import { environment } from '../../environments/environment'
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  @Output() formHasBeenSent: boolean = false
+  @Output() isUnableToSendForm: boolean = false
+  @Output() isSending: boolean = false
+  contactIcon = faUserCircle
+  contactIconExtra = faCommentAlt
+  contactSendingIcon = faSyncAlt
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit(form: NgForm): void {
+    this.isSending = true
     fetch(`${ environment.backendUrl }/api/contact`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
@@ -32,12 +39,24 @@ export class ContactComponent implements OnInit {
       })
     })
     .then(() => {
-      window.alert('Messaged received succesfully!\n\nI will get back to you as soon as possible.')
+      this.contactIcon = faUserCircle
+      this.contactIconExtra = faCommentAlt
+
+      this.formHasBeenSent = true
       form.reset()
+      this.isSending = false
     })
     .catch(() => {
-      window.alert('Something went wrong...\n\nTry again at a later time or contact me on linkedIn.')
+      this.contactIcon = faEnvelope
+      this.contactIconExtra = faExclamationCircle
+
+      this.formHasBeenSent = true
+      this.isUnableToSendForm = true
+      this.isSending = false
     })
   }
 
+  showContactForm() {
+    this.formHasBeenSent = false
+  }
 }
