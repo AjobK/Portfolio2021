@@ -1,12 +1,17 @@
 @mixin sectionTitle {
     font-size: 24pt;
     margin-bottom: 30px;
+    text-align: center;
 
     &::before, &::after {
         content: '•';
         margin: 5px;
         color: $secondary-color;
         opacity: 0.5;
+
+        @include mobile-xs {
+            display: none;
+        }
     }
 }
 
