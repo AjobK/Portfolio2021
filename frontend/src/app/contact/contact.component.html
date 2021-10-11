@@ -29,7 +29,8 @@
             </textarea>
             <div>
                 <button
-                    type="submit"
+                    type="button"
+                    (click)="resetForm()"
                     [disabled]="
                         (contactForm.form.value.message &&
                         contactForm.value.email &&

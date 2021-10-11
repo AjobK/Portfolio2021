@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core'
+import { Component, OnInit, Output, ViewChild } from '@angular/core'
 import { NgForm } from '@angular/forms'
 import { environment } from '../../environments/environment'
 import { faUserCircle, faCommentAlt, faEnvelope, faExclamationCircle, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +9,7 @@ import { faUserCircle, faCommentAlt, faEnvelope, faExclamationCircle, faSyncAlt 
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('contactForm') form: NgForm | undefined
   @Output() formHasBeenSent: boolean = false
   @Output() isUnableToSendForm: boolean = false
   @Output() isSending: boolean = false
@@ -22,6 +23,7 @@ export class ContactComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     this.isSending = true
+
     fetch(`${ environment.backendUrl }/api/contact`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
@@ -58,5 +60,9 @@ export class ContactComponent implements OnInit {
 
   showContactForm() {
     this.formHasBeenSent = false
+  }
+
+  resetForm() {
+    this.form?.reset()
   }
 }
