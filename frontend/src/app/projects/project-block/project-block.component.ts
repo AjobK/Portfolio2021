@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/shared/services/project.service';
 
 @Component({
   selector: 'app-project-block',
@@ -9,15 +10,20 @@ export class ProjectBlockComponent implements OnInit {
   @Input() title: String = 'No title';
   @Input() type: String = 'Personal project';
   @Input() description: String = 'No description';
-  @Input() imageSource: String = '';
+  @Input() imageUrl: String = '';
 
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
   }
 
-  goToProject(projectName: String = '') {
-    alert('Page has not been created yet. I likely forgot to make it.\n\nSorry for the inconvenience.\n\n- Forgetful Ajob Kustra')
+  goToProject() {
+    this.projectService.setSelectedProject({
+      title: this.title,
+      type: this.type,
+      description: this.description,
+      imageUrl: this.imageUrl
+    })
   }
 
 }

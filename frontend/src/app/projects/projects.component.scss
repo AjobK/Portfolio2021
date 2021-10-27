@@ -13,4 +13,13 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         grid-gap: 25px;
     }
+
+    > .projectsSelected {
+        width: 100%;
+    }
+}
+
+.hide {
+    pointer-events: none;
+    opacity: 0;
 }

@@ -2,10 +2,14 @@
     <h2>
         Projects
     </h2>
-    <section class="projectsOverview">
+    <section class="projectsSelected" [ngClass]="{ hide: projectService.selectedProject == null }">
+        <app-project-full>    
+        </app-project-full>
+    </section>
+    <section class="projectsOverview" [ngClass]="{ hide: projectService.selectedProject != null }">
         <app-project-block
             *ngFor="let project of projects"
-            [imageSource]="project.imageUrl"
+            [imageUrl]="project.imageUrl"
             [title]="project.title"
             [type]="project.projectType.name"
             [description]="project.description"

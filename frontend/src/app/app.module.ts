@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MycvComponent } from './mycv/mycv.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProjectFullComponent } from './projects/project-full/project-full.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProjectsComponent,
     ProjectBlockComponent,
     ContactComponent,
-    MycvComponent
+    MycvComponent,
+    ProjectFullComponent
   ],
   imports: [
     BrowserModule,

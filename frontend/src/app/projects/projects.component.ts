@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core'
 import { environment } from '../../environments/environment'
+import { ProjectService } from '../shared/services/project.service'
 
 @Component({
   selector: 'app-projects',
@@ -8,8 +9,9 @@ import { environment } from '../../environments/environment'
 })
 export class ProjectsComponent implements OnInit {
   @Output() projects: any
+  selectedProject: any
 
-  constructor() {
+  constructor(public projectService: ProjectService) {
     fetch(`${environment.backendUrl}/api/project`)
     .then((projectsResponse) => {
       return projectsResponse.json()

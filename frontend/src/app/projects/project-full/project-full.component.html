@@ -1,0 +1,8 @@
+<div class="fullMain" *ngIf="selectedProject != null">
+    <img src="{{ selectedProject.imageUrl }}" />
+
+    <h2>{{ selectedProject.title }}</h2>
+    <p>{{ selectedProject.description }}</p>
+
+    <button (click)="this.projectService.removeSelectedProject()">Back</button>
+</div>
