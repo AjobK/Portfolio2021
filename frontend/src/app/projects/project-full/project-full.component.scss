@@ -17,11 +17,75 @@ img {
     flex-direction: column;
     align-items: center;
 
-    > * {
+    > :is(.imgWrapper, h3, p) {
         margin-bottom: 20px;
     }
-}
 
-button {
-    @include baseButton($large: true, $standard: true);
+    > h3 {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px 10px 20px;
+        white-space: nowrap;
+        text-align: center;
+
+        > span {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 16px;
+            color: $primary-color;
+        }
+    }
+
+    .imgWrapper {
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding-top: 56.25%;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid white;
+        border-bottom: none;
+        padding-bottom: -5px;
+        background-color: #EFEFEF;
+
+        > img {
+            margin-top: -1px;
+            display: inline-block;
+            transition: 0.2s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    > button {
+        margin-bottom: 10px;
+        position: relative;
+        align-self: flex-start;
+        font-weight: normal !important;
+        color: $primary-color-darker;
+        @include baseButton($large: false, $standard: false);
+
+        > span {
+            transition: 0.2s;
+            width: 0%;
+            border-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background-color: $primary-color-darker;
+        }
+
+        &:hover {
+            > span {
+                width: 100%;
+            }
+        }
+    }
 }

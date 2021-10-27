@@ -7,19 +7,31 @@
         @include sectionTitle();
     }
 
-    > .projectsOverview {
+    > .innerWrapper {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        grid-gap: 25px;
-    }
+        position: relative;
 
-    > .projectsSelected {
-        width: 100%;
+        .projectsOverview {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 25px;
+        }
+    
+        .projectsSelected {
+            transition: 0.2s;
+            opacity: 1;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
     }
 }
 
 .hide {
     pointer-events: none;
     opacity: 0;
+    transition: 0.2s;
 }

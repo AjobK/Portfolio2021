@@ -24,6 +24,11 @@ export class ProjectBlockComponent implements OnInit {
       description: this.description,
       imageUrl: this.imageUrl
     })
+
+    // Is this optimal? No... Was I lazy? Yes!
+    document.getElementById('projects')?.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
 
 }

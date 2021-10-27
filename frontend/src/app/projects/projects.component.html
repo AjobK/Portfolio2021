@@ -2,18 +2,20 @@
     <h2>
         Projects
     </h2>
-    <section class="projectsSelected" [ngClass]="{ hide: projectService.selectedProject == null }">
-        <app-project-full>    
-        </app-project-full>
-    </section>
-    <section class="projectsOverview" [ngClass]="{ hide: projectService.selectedProject != null }">
-        <app-project-block
-            *ngFor="let project of projects"
-            [imageUrl]="project.imageUrl"
-            [title]="project.title"
-            [type]="project.projectType.name"
-            [description]="project.description"
-        >
-        </app-project-block>
-    </section>
+    <div class="innerWrapper">
+        <section class="projectsSelected" [ngClass]="{ hide: projectService.selectedProject == null }">
+            <app-project-full>
+            </app-project-full>
+        </section>
+        <section class="projectsOverview" [ngClass]="{ hide: projectService.selectedProject != null }">
+            <app-project-block
+                *ngFor="let project of projects"
+                [imageUrl]="project.imageUrl"
+                [title]="project.title"
+                [type]="project.projectType.name"
+                [description]="project.description"
+            >
+            </app-project-block>
+        </section>
+    </div>
 </section>
