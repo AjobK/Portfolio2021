@@ -14,10 +14,10 @@ export default class CreateObjects implements Seeder {
 
     private projects = [
       {
-        title: 'Social Media Monitoring',
-        description: 'This is a social media platform built with React, SCSS, NodeJS, PostgreSQL and a lot more. I ' +
-        'still work on this project as a product owner and full-stack developer with a team of 6 people. We plan to ' +
-        'deploy this application and advertise it in the very near future.',
+        title: 'Social Media Monitoring Police',
+        description: 'This was a project for the Dutch Police, in which the monitoring of COVID-19 riots was the ' +
+        'focus. As of today, multiple Police facilities run our scraping software on large monitors using Raspberry ' +
+        'PI\'s. The platforms that are being scraped are Telegram, Facebook, Instagram, Twitter (Now X) and WhatsApp.',
         imageUrl: '/images/smm.png',
         projectType: 0
       },
